@@ -2,17 +2,37 @@ import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'post',
-  title: 'Post',
+  title: 'Экскурсия',
   type: 'document',
   fields: [
     defineField({
+      name: 'date',
+      title: 'Дата',
+      type: 'datetime',
+    }),
+    defineField({
+      name: 'location',
+      title: 'Стартовая точка',
+      type: 'string',
+    }),
+    defineField({
+      name: 'price',
+      title: 'Цена',
+      type: 'number',
+    }),
+    defineField({
+      name: 'availableSeats',
+      title: 'Доступные места',
+      type: 'number',
+    }),
+    defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Название',
       type: 'string',
     }),
     defineField({
       name: 'slug',
-      title: 'Slug',
+      title: 'Слаг',
       type: 'slug',
       validation: (Rule) => Rule.required(),
       options: {
@@ -22,13 +42,13 @@ export default defineType({
     }),
     defineField({
       name: 'excerpt',
-      title: 'Excerpt',
+      title: 'Доп описание',
       type: 'text',
       rows: 4,
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Главное изображение',
       type: 'image',
       options: {
         hotspot: true,
@@ -36,7 +56,7 @@ export default defineType({
     }),
     defineField({
       name: 'body',
-      title: 'Body',
+      title: 'Основной Контент',
       type: 'blockContent',
     }),
   ],

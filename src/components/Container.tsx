@@ -5,7 +5,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
     <div className="container">
       <header className="header">
         <Link className="header__title" href="/">
-          Next.js + Sanity
+          Прогулки со смыслом
         </Link>
       </header>
       <main>{children}</main>

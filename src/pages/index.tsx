@@ -29,7 +29,11 @@ export const getStaticProps: GetStaticProps<
 export default function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
+
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
+
+  console.log(props.posts, posts, "CHECK EQUAL POSTS")
+
   return (
     <Container>
       <section>
