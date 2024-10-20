@@ -4,7 +4,7 @@ import { defineType, defineField } from 'sanity'
 export default defineType({
   name: 'reviewSection',
   title: 'Фотографии отзывов',
-  type: 'object',
+  type: 'document',
   fields: [
     defineField({
       name: 'images',

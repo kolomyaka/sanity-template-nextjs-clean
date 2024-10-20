@@ -20,6 +20,8 @@ import {
   projectId,
 } from '~/lib/sanity.api'
 import { schema } from '~/schemas'
+import { structureTool } from 'sanity/structure'
+import { myStructure } from '~/schemas/myStructure'
 
 const iframeOptions = {
   url: defineUrlResolver({
@@ -45,6 +47,7 @@ export default defineConfig({
       // and have access to content in the form in real-time.
       // It's part of the Studio's “Structure Builder API” and is documented here:
       // https://www.sanity.io/docs/structure-builder-reference
+      // structure: myStructure,
       defaultDocumentNode: (S, { schemaType }) => {
         return S.document().views([
           // Default form view
@@ -54,6 +57,7 @@ export default defineConfig({
         ])
       },
     }),
+    // structureTool({structure: myStructure}),
     // Add the "Open preview" action
     previewUrl({
       base: '/api/draft',
