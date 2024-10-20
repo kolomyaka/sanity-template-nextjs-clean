@@ -59,6 +59,11 @@ export default defineType({
       title: 'Основной Контент',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'reviews',
+      title: "Отзывы",
+      type: "blockContent",
+    })
   ],
   preview: {
     select: {

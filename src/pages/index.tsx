@@ -32,7 +32,6 @@ export default function IndexPage(
 
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
 
-  console.log(props.posts, posts, "CHECK EQUAL POSTS")
 
   return (
     <Container>

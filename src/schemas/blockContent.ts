@@ -1,5 +1,5 @@
 import { defineArrayMember, defineType } from 'sanity'
-
+import reviewSection from './reviewSection'
 /**
  * This is the schema definition for the rich text fields used for
  * for this blog studio. When you import it in schemas.js it can be
@@ -10,6 +10,13 @@ import { defineArrayMember, defineType } from 'sanity'
  *    type: 'blockContent'
  *  }
  */
+
+
+const customReviewSection = {
+  ...reviewSection,
+  hidden: ({ parent }) => parent?.some(item => item._type === 'reviewSection'),
+}
+
 export default defineType({
   title: 'Block Content',
   name: 'blockContent',
@@ -56,5 +63,6 @@ export default defineType({
         ],
       },
     }),
+    defineArrayMember(customReviewSection)
   ],
 })

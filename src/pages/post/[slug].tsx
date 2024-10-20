@@ -51,6 +51,8 @@ export default function ProjectSlugRoute(
     slug: props.post.slug.current,
   })
 
+  console.log(post)
+
   return (
     <Container>
       <section className="post">
@@ -71,6 +73,9 @@ export default function ProjectSlugRoute(
           <p className="post__date">{formatDate(post._createdAt)}</p>
           <div className="post__content">
             <PortableText value={post.body} />
+          </div>
+          <div>
+            {post.reviews?.map((image) => (<Image src={urlForImage(image).url()} width={'250'} height={'300'} alt={''}/>))}
           </div>
         </div>
       </section>
