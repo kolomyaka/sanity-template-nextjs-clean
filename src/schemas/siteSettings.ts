@@ -6,12 +6,12 @@ export default {
     {
       name: 'title',
       title: 'Site Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'description',
       title: 'Site Description',
-      type: 'text'
-    }
-  ]
+      type: 'text',
+    },
+  ],
 }

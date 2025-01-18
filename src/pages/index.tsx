@@ -1,4 +1,5 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import Image from 'next/image'
 import { useLiveQuery } from 'next-sanity/preview'
 
 import Card from '~/components/Card'
@@ -6,15 +7,20 @@ import Container from '~/components/Container'
 import Welcome from '~/components/Welcome'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
-import { getPosts, getReviews, type Post, postsQuery, reviewsQuery } from '~/lib/sanity.queries'
-import type { SharedPageProps } from '~/pages/_app'
-import Image from 'next/image'
 import { urlForImage } from '~/lib/sanity.image'
+import {
+  getPosts,
+  getReviews,
+  type Post,
+  postsQuery,
+  reviewsQuery,
+} from '~/lib/sanity.queries'
+import type { SharedPageProps } from '~/pages/_app'
 
 export const getStaticProps: GetStaticProps<
   SharedPageProps & {
     posts: Post[]
-  reviews: any[]
+    reviews: any[]
   }
 > = async ({ draftMode = false }) => {
   const client = getClient(draftMode ? { token: readToken } : undefined)
@@ -26,7 +32,7 @@ export const getStaticProps: GetStaticProps<
       draftMode,
       token: draftMode ? readToken : '',
       posts,
-      reviews
+      reviews,
     },
   }
 }
@@ -34,10 +40,9 @@ export const getStaticProps: GetStaticProps<
 export default function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
-
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   const [reviews] = useLiveQuery(props.reviews, reviewsQuery)
-  console.log(reviews, "CHECK REviEWS")
+  console.log(reviews, 'CHECK REviEWS')
   return (
     <Container>
       <section>
@@ -48,7 +53,7 @@ export default function IndexPage(
         )}
       </section>
       {reviews.length ? (
-        reviews.map((review) => (
+        reviews.map((review) =>
           review.images.map((image) => (
             <Image
               key={image._key}
@@ -57,8 +62,8 @@ export default function IndexPage(
               height={300}
               alt=""
             />
-          ))
-        ))
+          )),
+        )
       ) : (
         <p>No reviews available</p>
       )}

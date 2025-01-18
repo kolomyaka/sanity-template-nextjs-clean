@@ -1,4 +1,5 @@
 import { defineArrayMember, defineType } from 'sanity'
+
 import reviewSection from './reviewSection'
 /**
  * This is the schema definition for the rich text fields used for
@@ -11,10 +12,10 @@ import reviewSection from './reviewSection'
  *  }
  */
 
-
 const customReviewSection = {
   ...reviewSection,
-  hidden: ({ parent }) => parent?.some(item => item._type === 'reviewSection'),
+  hidden: ({ parent }) =>
+    parent?.some((item) => item._type === 'reviewSection'),
 }
 
 export default defineType({
@@ -63,6 +64,6 @@ export default defineType({
         ],
       },
     }),
-    defineArrayMember(customReviewSection)
+    defineArrayMember(customReviewSection),
   ],
 })

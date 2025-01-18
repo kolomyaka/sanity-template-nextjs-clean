@@ -5,8 +5,9 @@ export const myStructure = (S) =>
       S.listItem()
         .title('reviewSection')
         .child(
-          S.document()
-            .schemaType('reviewSection')
-            .documentId('reviewSection')),
-      ...S.documentTypeListItems().filter(listItem => !['reviewSection'].includes(listItem.getId()))
+          S.document().schemaType('reviewSection').documentId('reviewSection'),
+        ),
+      ...S.documentTypeListItems().filter(
+        (listItem) => !['reviewSection'].includes(listItem.getId()),
+      ),
     ])

@@ -1,9 +1,10 @@
 import { SchemaTypeDefinition } from 'sanity'
 
-import blockContent from './blockContent'
-import post from './post'
 import reviewSection from '~/schemas/reviewSection'
 import siteSettings from '~/schemas/siteSettings'
+
+import blockContent from './blockContent'
+import post from './post'
 
 export const schemaTypes = [post, blockContent]
 export const schema: { types: SchemaTypeDefinition[] } = {
