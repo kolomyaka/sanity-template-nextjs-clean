@@ -18,8 +18,8 @@ export default async function handler(
 
   const transporter = nodemailer.createTransport({
     host: SMPT_HOST,
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       SMPT_USERNAME,
       SMPT_PASSWORD,
