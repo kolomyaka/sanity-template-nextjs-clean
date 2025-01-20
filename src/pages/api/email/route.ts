@@ -25,7 +25,7 @@ export default async function handler(
       SMPT_PASSWORD,
     },
   });
-  console.log('AFTER CREATE TRANSPORT')
+  console.log('AFTER CREATE TRANSPORT', transporter)
   const mailOptions = {
     from: SMPT_USERNAME,
     to: email,
