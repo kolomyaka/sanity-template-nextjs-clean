@@ -6,7 +6,7 @@ export const SendMail = () => {
 
   const onSendEMail = async () => {
     try {
-      await axios.post("/api/contact", {
+      await axios.post("/api/email", {
         name: 'РИТОЧКА',
         email: "160201@bk.ru",
         message: 'ЗАЕЧКА Я ТЕБЯ ОЧЕН ЬСИЛЬНО ЛЮБЛЮ!',
