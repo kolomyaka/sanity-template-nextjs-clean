@@ -5,7 +5,7 @@ const SMPT_HOST = process.env.SMTP_SERVER_HOST;
 const SMPT_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMPT_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
 
-export async function POST(request: Request) {
+export default async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
 
