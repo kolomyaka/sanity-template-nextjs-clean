@@ -10,7 +10,9 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { email, message, name } = JSON.parse(req.body);
+  console.log(req.body)
+  const { email, message, name } = req.body;
+
 
   const transporter = nodemailer.createTransport({
     host: SMPT_HOST,
