@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { NextApiRequest, NextApiResponse } from 'next'
 
-const SMPT_HOST = process.env.SMTP_SERVER_HOST;
+const SMPT_HOST = 'mail.kolomyaka.ru';
 const SMPT_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMPT_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
 
@@ -23,7 +23,7 @@ export default function handler(
       SMPT_PASSWORD,
     },
   });
-
+  console.log('AFTER CREATE TRANSPORT')
   const mailOptions = {
     from: SMPT_USERNAME,
     to: email,
@@ -31,8 +31,9 @@ export default function handler(
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
-  transporter.sendMail(mailOptions);
 
+  transporter.sendMail(mailOptions);
+  console.log('AFTER SEND M')
   res.status(200)
 
 }
