@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { NextApiRequest, NextApiResponse } from 'next'
 
-const SMPT_HOST = 'mail.kolomyaka.ru';
+const SMPT_HOST = process.env.SMTP_SERVER_HOST;
 const SMPT_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMPT_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
 
@@ -10,7 +10,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(req.body)
+  console.log({SMPT_HOST,
+    SMPT_USERNAME,
+    SMPT_PASSWORD})
   const { email, message, name } = req.body;
 
 
