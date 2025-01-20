@@ -8,7 +8,7 @@ export const SendMail = () => {
     try {
       await axios.post("/api/email/route", {
         name: 'РИТОЧКА',
-        email: "160201@bk.ru",
+        email: "kolomyakan@mail.ru",
         message: 'ЗАЕЧКА Я ТЕБЯ ОЧЕН ЬСИЛЬНО ЛЮБЛЮ!',
       });
     } catch (error) {

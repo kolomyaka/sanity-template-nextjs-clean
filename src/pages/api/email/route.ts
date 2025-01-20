@@ -6,7 +6,7 @@ const SMPT_HOST = 'mail.kolomyaka.ru';
 const SMPT_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMPT_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -32,10 +32,14 @@ export default function handler(
   };
 
 
-  transporter.sendMail(mailOptions);
-  console.log('AFTER SEND M')
-  res.status(200)
+  try {
 
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Email sent successfully!' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ message: 'Error sending email' });
+  }
 }
 
 // export default async function POST(request: Request) {
