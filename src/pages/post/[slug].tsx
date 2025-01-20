@@ -75,15 +75,15 @@ export default function ProjectSlugRoute(
             <PortableText value={post.body} />
           </div>
           <div>
-            {post.reviews?.map((image, index) => (
-              <Image
-                key={index}
-                src={urlForImage(image).url()}
-                width={'250'}
-                height={'300'}
-                alt={''}
-              />
-            ))}
+            {/*{post.reviews?.map((image, index) => (*/}
+            {/*  <Image*/}
+            {/*    key={index}*/}
+            {/*    src={urlForImage(image)}*/}
+            {/*    width={'250'}*/}
+            {/*    height={'300'}*/}
+            {/*    alt={''}*/}
+            {/*  />*/}
+            {/*))}*/}
           </div>
         </div>
       </section>

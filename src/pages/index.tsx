@@ -16,6 +16,7 @@ import {
   reviewsQuery,
 } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
+import { SendMail } from '~/components/send-mail'
 
 export const getStaticProps: GetStaticProps<
   SharedPageProps & {
@@ -42,9 +43,13 @@ export default function IndexPage(
 ) {
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   const [reviews] = useLiveQuery(props.reviews, reviewsQuery)
-  console.log(reviews, 'CHECK REviEWS')
+
+
+
+
   return (
     <Container>
+      <SendMail />
       <section>
         {posts.length ? (
           posts.map((post) => <Card key={post._id} post={post} />)
