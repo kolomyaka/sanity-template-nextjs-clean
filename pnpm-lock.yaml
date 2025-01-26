@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@next/env':
+    specifier: ^15.1.6
+    version: 15.1.6
   '@portabletext/react':
     specifier: 3.0.11
     version: 3.0.11(react@18.2.0)
@@ -1081,6 +1084,10 @@ packages:
 
   /@next/env@14.1.0:
     resolution: {integrity: sha512-Py8zIo+02ht82brwwhTg36iogzFqGLPXlRGKQw5s+qP/kMNc4MAyDeEwBKDijk6zTIbegEgu8Qy7C1LboslQAw==}
+    dev: false
+
+  /@next/env@15.1.6:
+    resolution: {integrity: sha512-d9AFQVPEYNr+aqokIiPLNK/MTyt3DWa/dpKveiAaVccUadFbhFEvY6FXYX2LJO2Hv7PHnLBu2oWwB4uBuHjr/w==}
     dev: false
 
   /@next/eslint-plugin-next@14.1.0:
