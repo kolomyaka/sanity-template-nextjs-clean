@@ -21,7 +21,7 @@
     "@sanity/vision": "3.28.0",
     "@tailwindcss/typography": "0.5.10",
     "axios": "^1.7.9",
-    "next": "14.1.0",
+    "next": "15.1.2",
     "next-sanity": "5.5.11",
     "nodemailer": "^6.9.16",
     "react": "18.2.0",
@@ -45,5 +45,6 @@
   },
   "engines": {
     "node": ">=16"
-  }
+  },
+  "packageManager": "pnpm@8.15.5+sha256.4b4efa12490e5055d59b9b9fc9438b7d581a6b7af3b5675eb5c5f447cee1a589"
 }
